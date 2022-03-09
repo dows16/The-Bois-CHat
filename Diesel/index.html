@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diesel</title>
+        <link rel="stylesheet" href="../home/style.css">
+    </head>
+
+    <body>
+        <h1>Diesel</h1>
+        <nav>
+            <a href="/Home">Home</a>
+            <a href="/About">About us</a>
+            <a href="/Diesel">Diesel</a>
+            <a href="/Employments">Employments</a>
+            <a href="/Support">Support</a>
+            <a href="https://thebois.mutantrabbit767.repl.co/signup/">Sign up</a>
+            <a href="https://thebois.mutantrabbit767.repl.co/login/">Login</a>            
+        </nav>
+        <p style="text-align: center;">
+            Thoughts on upgrading to Diesel? Purchase a subscription plan down below!
+        </p>
+        <h2>Subscription Plans</h2>
+        <h5 class="rl-crncy">Real Currency (CAD)</h5>
+        <div class="subscription-plans" id="options">
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase a one time one month subscription plan of diesel.
+                    <br>
+                    <b>ONLY 2.99$</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase a one time six month subscription plan of diesel.
+                    <br>
+                    <b>ONLY 9.99$ AND GET AN EXTRA MONTH FREE</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase an auto top up subscription plan of diesel monthly.
+                    <br>
+                    <b>ONLY 1.99$ AND SAVE 1.00$</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase a one time annual subscription plan of diesel.
+                    <br>
+                    <b>ONLY 19.99$</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h5 class="rl-crncy">Robux</h5>
+        <div class="subscription-plans" id="options1">
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase a one time one month subscription plan of diesel.
+                    <br>
+                    <b>ONLY 300 RBX</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase a one time six month subscription plan of diesel.
+                    <br>
+                    <b>ONLY 1200 RBX AND GET AN EXTRA MONTH FREE</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase an auto top up subscription plan of diesel monthly.
+                    <br>
+                    <b>ONLY 200 RBX AND SAVE 100 RBX</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+            <div class="options">
+                <p style="text-align: center;">
+                    Purchase a one time annual subscription plan of diesel.
+                    <br>
+                    <b>ONLY 3100 RBX</b>
+                    <br>
+                </p>
+                <a href="/Payment">Purchase</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h2>Why Diesel</h2>
+        <p style="text-align: center;">
+            Diesel was inspired by Discord's Nitro subscription, there are some similar features, but Diesel guarantees an affordable price and easy work around system with purchasing and using Diesel.
+        </p>
+        <div class="logo-section">
+            <div>
+                <h2>Customzation</h2>
+                <p style="text-align: center;">
+                    Get access to GIF image profile pictures and custom color theme for your profile. <b>EZ</b>
+                </p>
+            </div>
+            <img src="Deafault pfp.png" alt="Image">
+        </div>
+        <div class="logo-section">
+            <img src="https://discord.com/assets/98c9edf635a98377ec579aaa19ed47be.svg" alt="pic">
+            <div>
+                <h2>Media</h2>
+                <p style="text-align: center;">
+                    With Diesel you can send GIF images, and 500MB-700MB videos.
+                </p>    
+            </div>
+        </div>
+    </body>
+    <script>
+        const sections = [ document.getElementById('options'), document.getElementById('options1') ]
+        sections.forEach(section => {
+            section.childNodes.forEach(node => {
+                let shadow = 0;
+                let interval;
+                node.addEventListener('mouseenter', () => {
+                    if(shadow != 0) shadow = 0;
+                    if (interval) clearInterval(interval)
+                    interval = setInterval(() => {
+                        shadow++;
+                        node.style.boxShadow = `0 0 20px ${shadow}px rgb(119, 114, 114)`
+                        if(shadow > 10) clearInterval(interval)
+                    }, 10)
+                })
+            
+                node.addEventListener('mouseleave', () => {
+                    if (interval) clearInterval(interval)
+                    interval = setInterval(() => {
+                        shadow--;
+                        node.style.boxShadow = `0 0 20px ${shadow}px rgb(119, 114, 114)`
+                        if(shadow < 0) {
+                            clearInterval(interval)
+                            shadow = 0;
+                            node.style.boxShadow = `none`
+                        }
+                    }, 10)
+                })
+            })
+        })
+    </script>
+</html>
